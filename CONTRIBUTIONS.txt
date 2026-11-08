@@ -1,0 +1,26 @@
+# Group Contributions Report
+
+**Project:** Smart Campus Navigation and Facility Analytics System
+
+**Member A - Christion**
+- Worked on the Facility Management part of the project.
+- Worked the custom hash table for storing and finding facilities.
+- Worked on searching and managing facility information.
+
+**Member B – Om**
+- Worked on the Campus Graph part of the project.
+- Worked on storing campus locations and connections.
+- Worked on the navigation features using the graph.
+
+**Member C – Akshya**
+- Worked on the Department Tree part of the project.
+- Worked on loading and checking department information from the file.
+- Worked on adding and searching departments.
+- Worked on displaying the department hierarchy.
+- Worked on preorder, postorder, and level-order traversals.
+- Worked on calculating department statistics.
+
+**Team Contributions**
+- Each member worked on their assigned part of the project.
+- We worked together to connect our parts into one program.
+- We also helped with testing, fixing errors, and preparing the project files.
