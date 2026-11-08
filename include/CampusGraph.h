@@ -39,6 +39,7 @@ public:
 
     // Display buildings and their connections
     void displayBuildings();
+    vector<string> getBuildingNames() const;
 
     // Find all reachable buildings using BFS
     void BFS(string startID);

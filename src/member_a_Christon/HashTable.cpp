@@ -41,7 +41,8 @@ size_t HashTable::hashFunction(const string& normalizedKey) const {
 
     // Polynomial rolling hash: h = (h * 31 + character) mod capacity.
     size_t hashValue = 0;
-    for (unsigned char ch : normalizedKey) {
+    for (size_t i = 0; i < normalizedKey.size(); ++i) {
+        const unsigned char ch = static_cast<unsigned char>(normalizedKey[i]);
         hashValue = (hashValue * 31 + ch) % buckets_.size();
     }
     return hashValue;

@@ -172,6 +172,15 @@ void CampusGraph::displayBuildings() {
     }
 }
 
+vector<string> CampusGraph::getBuildingNames() const {
+    vector<string> names;
+    names.reserve(buildings.size());
+    for (const Building& building : buildings) {
+        names.push_back(building.name);
+    }
+    return names;
+}
+
 // Breadth First Search
 void CampusGraph::BFS(string startID) {
 
