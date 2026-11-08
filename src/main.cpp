@@ -1,6 +1,12 @@
+
 #include <iostream>
 #include <string>
+
+
+#include "CampusGraph.h"
 #include "DepartmentTree.h"
+#include "Facility.h"
+#include "HashTable.h"
 
 using namespace std;
 
