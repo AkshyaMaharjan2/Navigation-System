@@ -5,11 +5,12 @@
 #include <sstream>
 #include <queue>
 #include <algorithm>
+#include <cstddef>
 
 
 int CampusGraph::findBuildingIndex(string name) {
 
-    for (int i = 0; i < buildings.size(); i++) {
+    for (size_t i = 0; i < buildings.size(); i++) {
 
         if (buildings[i].name == name) {
             return i;
@@ -149,7 +150,7 @@ void CampusGraph::displayBuildings() {
 
     cout << "\n===== CAMPUS BUILDINGS =====\n";
 
-    for (int i = 0; i < buildings.size(); i++) {
+    for (size_t i = 0; i < buildings.size(); i++) {
 
         cout << "\nBuilding: " << buildings[i].name;
         cout << " (" << buildings[i].name << ")";
@@ -319,7 +320,7 @@ void CampusGraph::connectivityReport() {
     // Find isolated buildings
     cout << "\nIsolated Buildings:\n";
 
-    for (int i = 0; i < buildings.size(); i++) {
+    for (size_t i = 0; i < buildings.size(); i++) {
 
         if (buildings[i].neighbors.empty()) {
             cout << buildings[i].name << endl;
@@ -327,7 +328,7 @@ void CampusGraph::connectivityReport() {
     }
 
     // Count connected components
-    for (int i = 0; i < buildings.size(); i++) {
+    for (size_t i = 0; i < buildings.size(); i++) {
 
         if (!visited[i]) {
 

@@ -47,28 +47,38 @@ int main()
         cout << "\n========================================" << endl;
         cout << "       SMART CAMPUS NAVIGATION SYSTEM" << endl;
         cout << "========================================" << endl;
+
+        
+
+        cout << "1. Display All Facilities\n";
+        cout << "2. Search Facility by ID\n";
+        cout << "3. Search Facility by Name\n";
+        cout << "4. Search Facility by Category\n";
+        cout << "5. Display Facility Category Report\n";
+
       
          cout << "\n===== CAMPUS NAVIGATION =====\n";
 
-        cout << "1. Display Buildings\n";
-        cout << "2. BFS Traversal\n";
-        cout << "3. Find Shortest Path\n";
-        cout << "4. Connectivity Report\n";
+        cout << "6. Display Buildings\n";
+        cout << "7. BFS Traversal\n";
+        cout << "8. Find Shortest Path\n";
+        cout << "9. Connectivity Report\n";
 
         cout << "\n--- Department Tree Management ---" << endl;
-        cout << "5. Add Department" << endl;
-        cout << "6. Search Department" << endl;
-        cout << "7. Display Department Hierarchy" << endl;
-        cout << "8. Preorder Traversal" << endl;
-        cout << "9. Postorder Traversal" << endl;
-        cout << "10. Level Order Traversal" << endl;
-        cout << "11. Department Statistics" << endl;
+        cout << "10. Add Department" << endl;
+        cout << "11. Search Department" << endl;
+        cout << "12. Display Department Hierarchy" << endl;
+        cout << "13. Preorder Traversal" << endl;
+        cout << "14. Postorder Traversal" << endl;
+        cout << "15. Level Order Traversal" << endl;
+        cout << "16. Department Statistics" << endl;
+
         cout << "\n--- Facility Management ---" << endl;
-        cout << "12. View All Facilities" << endl;
-        cout << "13. Search Facility by ID" << endl;
-        cout << "14. Search Facility by Name" << endl;
-        cout << "15. Search Facility by Category" << endl;
-        cout << "16. Facility Category Report" << endl;
+        cout << "17. View All Facilities" << endl;
+        cout << "18. Search Facility by ID" << endl;
+        cout << "19. Search Facility by Name" << endl;
+        cout << "20. Search Facility by Category" << endl;
+        cout << "21. Facility Category Report" << endl;
         cout << "0. Exit" << endl;
 
         cout << "\nEnter your choice: ";
@@ -87,18 +97,58 @@ int main()
 
         switch (choice)
         {
+
             case 1:
+            facilityManager.displayAllFacilities();
+            break;
+
+            case 2: {
+                string id;
+                cout << "Enter Facility ID: ";
+                cin >> id;
+
+                facilityManager.searchByID(id);
+                break;
+            }
+
+            case 3: {
+                string name;
+                cin.ignore(10000, '\n');
+
+                cout << "Enter Facility Name: ";
+                getline(cin, name);
+
+                facilityManager.searchByName(name);
+                break;
+            }
+
+            case 4: {
+                string category;
+                cin.ignore(10000, '\n');
+
+                cout << "Enter Facility Category: ";
+                getline(cin, category);
+
+                facilityManager.searchByCategory(category);
+                break;
+            }
+
+            case 5:
+                facilityManager.displayCategoryReport();
+                break;
+
+            case 6:
                 campus.displayBuildings();
                 break;
 
-            case 2:
+            case 7:
                 cout << "Enter starting building Name: ";
                 cin >> startName;
 
                 campus.BFS(startName);
                 break;
 
-            case 3:
+            case 8:
                 cout << "Enter starting building Name: ";
                 cin >> startName;
 
@@ -108,11 +158,11 @@ int main()
                 campus.shortestPath(startName, endName);
                 break;
 
-            case 4:
+            case 9:
                 campus.connectivityReport();
                 break;
             // Add Department
-            case 5:
+            case 10:
             {
                 string departmentName;
                 string parentName;
@@ -138,7 +188,7 @@ int main()
             }
 
             // Search Department
-            case 6:
+            case 11:
             {
                 string departmentName;
 
@@ -151,35 +201,35 @@ int main()
             }
 
             // Display Hierarchy
-            case 7:
+            case 12:
                 departmentTree.displayHierarchy();
                 break;
 
             // Preorder Traversal
-            case 8:
+            case 13:
                 departmentTree.preorderTraversal();
                 break;
 
             // Postorder Traversal
-            case 9:
+            case 14:
                 departmentTree.postorderTraversal();
                 break;
 
             // Level Order Traversal
-            case 10:
+            case 15:
                 departmentTree.levelOrderTraversal();
                 break;
 
             // Department Statistics
-            case 11:
+            case 16:
                 departmentTree.displayStatistics();
                 break;
 
-            case 12:
+            case 17:
                 facilityManager.displayAllFacilities();
                 break;
 
-            case 13:
+            case 18:
             {
                 string facilityID;
                 cout << "Enter facility ID: ";
@@ -188,7 +238,7 @@ int main()
                 break;
             }
 
-            case 14:
+            case 19:
             {
                 string facilityName;
                 cout << "Enter facility name: ";
@@ -197,7 +247,7 @@ int main()
                 break;
             }
 
-            case 15:
+            case 20:
             {
                 string category;
                 cout << "Enter facility category: ";
@@ -206,7 +256,7 @@ int main()
                 break;
             }
 
-            case 16:
+            case 21:
                 facilityManager.displayCategoryReport();
                 break;
 
