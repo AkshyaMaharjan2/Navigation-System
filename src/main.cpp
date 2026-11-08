@@ -18,6 +18,10 @@ int main()
     // Load input files
     campus.loadBuildings("data/buildings.txt");
     campus.loadConnections("data/connections.txt");
+
+    // Load facilities only after the accepted building list is available.
+    FacilityManager facilityManager;
+    facilityManager.loadFromFile("data/facilities.txt", campus.getBuildingNames());
   
   
     // Create Department Tree object
@@ -59,6 +63,12 @@ int main()
         cout << "9. Postorder Traversal" << endl;
         cout << "10. Level Order Traversal" << endl;
         cout << "11. Department Statistics" << endl;
+        cout << "\n--- Facility Management ---" << endl;
+        cout << "12. View All Facilities" << endl;
+        cout << "13. Search Facility by ID" << endl;
+        cout << "14. Search Facility by Name" << endl;
+        cout << "15. Search Facility by Category" << endl;
+        cout << "16. Facility Category Report" << endl;
         cout << "0. Exit" << endl;
 
         cout << "\nEnter your choice: ";
@@ -163,6 +173,41 @@ int main()
             // Department Statistics
             case 11:
                 departmentTree.displayStatistics();
+                break;
+
+            case 12:
+                facilityManager.displayAllFacilities();
+                break;
+
+            case 13:
+            {
+                string facilityID;
+                cout << "Enter facility ID: ";
+                getline(cin >> ws, facilityID);
+                facilityManager.searchByID(facilityID);
+                break;
+            }
+
+            case 14:
+            {
+                string facilityName;
+                cout << "Enter facility name: ";
+                getline(cin >> ws, facilityName);
+                facilityManager.searchByName(facilityName);
+                break;
+            }
+
+            case 15:
+            {
+                string category;
+                cout << "Enter facility category: ";
+                getline(cin >> ws, category);
+                facilityManager.searchByCategory(category);
+                break;
+            }
+
+            case 16:
+                facilityManager.displayCategoryReport();
                 break;
 
             // Exit
